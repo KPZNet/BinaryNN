@@ -16,7 +16,7 @@ def keras_run(X, Y) :
         X,
         Y,
         epochs=1000,
-        shuffle=True,
+        shuffle=False,
         verbose=2
     )
     return model
