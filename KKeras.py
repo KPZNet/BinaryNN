@@ -8,8 +8,7 @@ def keras_run(X, Y) :
     # Define the model
     model = Sequential ()
     model.add ( Dense ( 1, input_dim=8, kernel_initializer='uniform', activation='sigmoid' ) )
-    #model.add ( Dense ( 5, activation='sigmoid' ) )
-    #model.add ( Dense ( 1, activation='sigmoid' ) )
+
     model.compile ( loss='mean_absolute_error', optimizer='adam' )
     # Train the model
     model.fit (
