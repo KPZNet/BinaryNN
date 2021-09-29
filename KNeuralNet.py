@@ -85,12 +85,13 @@ def test_net(nnet):
     print('Got: ', nnet.predict(sigmoid_fn=sigmoidA, new_input=run_test_1), ' Expect: ', run_test_1[0][1])
     print('Got: ', nnet.predict(sigmoid_fn=sigmoidA, new_input=run_test_2), ' Expect: ', run_test_2[0][1])
 
-np.random.seed(datetime.now().microsecond)
+#np.random.seed(datetime.now().microsecond)
+np.random.seed(5632)
 row, col = 100, 8
 
 inputsA = np.random.randint(2, size=(row,col))
 for n in inputsA:
-    n[0] = n[col-1]
+    n[col-1] = n[0]
 outputsA = np.array([ inputsA[:, 0] ]).T
 
 NNN = NeuralNetwork()
