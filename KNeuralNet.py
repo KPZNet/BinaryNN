@@ -74,7 +74,7 @@ class NeuralNetwork :
 
 def test_net(nnet, run_test_1, run_test_2) :
     print("***** Testing Net *****")
-    print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_1 ), ' Expect: ', run_test_1[0][1] )
+    print ( 'Input: ', run_test_1, 'NN Result: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_1 ) )
     print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_2 ), ' Expect: ', run_test_2[0][1] )
 
 # np.random.seed(datetime.now().microsecond)
@@ -83,7 +83,7 @@ row, col = 100, 8
 
 inputsA = np.random.randint ( 2, size=(row, col) )
 for n in inputsA :
-    n[col - 1] = n[0]
+    n[2] = n[0]
 outputsA = np.array ( [inputsA[:, 0]] ).T
 
 NNN = NeuralNetwork ()
