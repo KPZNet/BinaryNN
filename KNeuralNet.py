@@ -1,10 +1,8 @@
 import copy
-
 import matplotlib.pyplot as plt
-
 from KKeras import *
 
-
+#Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
     plt.plot ( epocs, error_history, label="errors" )
     plt.title ( "Training" )
@@ -13,41 +11,33 @@ def plot_error(epocs, error_history) :
     plt.legend ()
     plt.show ()
 
-
+#Plot weight updates to see training trends over epochs
 def plot_weights(epocs, weight_history) :
     wh = np.array ( weight_history )
     s = wh.shape[1]
-
     [plt.plot ( epocs, wh[:, i], label="weight {0}".format ( i ) ) for i in range ( s )]
-
     plt.title ( "Weights" )
     plt.xlabel ( "EPOCs" )
     plt.ylabel ( "weight" )
     plt.legend ()
     plt.show ()
 
-
+#Sigmoid function
 def sigmoidA(x) :
     return 1 / (1 + np.exp ( -x ))
 
-
+#Sigmoid function derivative
 def sigmoidA_derivative(x) :
     return x * (1 - x)
 
-
+#Neraul net class
+#Uses replaceable activation functions
 class NeuralNetwork :
     def __init__(self) :
-
         self.error_history = []
         self.epoch_list = []
         self.weight_history = []
         self.stop_delta = 0.001
-
-    def sigmoid(self, x) :
-        return 1 / (1 + np.exp ( -x ))
-
-    def sigmoid_derivative(self, x) :
-        return x * (1 - x)
 
     def train(self, training_input, training_output, epochs=1000) :
         self.weights = np.array ( np.random.normal ( size=(col, 1) ) )
@@ -87,7 +77,6 @@ def test_net(nnet, run_test_1, run_test_2) :
     print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_1 ), ' Expect: ', run_test_1[0][1] )
     print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_2 ), ' Expect: ', run_test_2[0][1] )
 
-
 # np.random.seed(datetime.now().microsecond)
 np.random.seed ( 5632 )
 row, col = 100, 8
@@ -105,7 +94,7 @@ plot_weights ( NNN.epoch_list, NNN.weight_history )
 
 run_test_1 = np.array ( [[1, 1, 1, 0, 0, 1, 0, 1]] )
 run_test_2 = np.array ( [[0, 0, 0, 1, 0, 1, 1, 0]] )
-
-
-Keras_run ( inputsA, outputsA, run_test_1, run_test_2 )
 test_net ( NNN, run_test_1, run_test_2 )
+
+#Keras_run ( inputsA, outputsA, run_test_1, run_test_2 )
+#test_net ( NNN, run_test_1, run_test_2 )
