@@ -1,7 +1,7 @@
 import copy
 from datetime import *
 import matplotlib.pyplot as plt
-from KKeras import *
+import numpy as np
 
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
