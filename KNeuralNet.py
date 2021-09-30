@@ -72,7 +72,7 @@ class NeuralNetwork :
         prediction = sigmoid_fn ( np.dot ( new_input, self.weights ) )
         return prediction
 
-def test_run_random(nnet, num, row, col):
+def test_run_random(nnet, row, col):
     inputs = np.random.randint ( 2, size=(row, col) )
     print("\nTEST RESULTS")
     for input in inputs:
@@ -80,7 +80,6 @@ def test_run_random(nnet, num, row, col):
         print ( 'Input: ', input, 'Expected:', e, ' , NN Result: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=input ) )
 
 np.random.seed(datetime.now().microsecond)
-#np.random.seed ( 5632 )
 row, col = 100, 8
 
 inputsA = np.random.randint ( 2, size=(row, col) )
@@ -95,4 +94,4 @@ plot_weights ( NNN.epoch_list, NNN.weight_history )
 run_test_1 = np.array ( [[1, 1, 1, 0, 0, 1, 0, 1]] )
 run_test_2 = np.array ( [[0, 0, 0, 1, 0, 1, 1, 0]] )
 
-test_run_random(NNN, 10, 5, col)
+test_run_random(NNN, 5, col)
