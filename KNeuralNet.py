@@ -83,6 +83,7 @@ class NeuralNetwork :
 
 
 def test_net(nnet, run_test_1, run_test_2) :
+    print("***** Testing Net *****")
     print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_1 ), ' Expect: ', run_test_1[0][1] )
     print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_2 ), ' Expect: ', run_test_2[0][1] )
 
@@ -105,5 +106,6 @@ plot_weights ( NNN.epoch_list, NNN.weight_history )
 run_test_1 = np.array ( [[1, 1, 1, 0, 0, 1, 0, 1]] )
 run_test_2 = np.array ( [[0, 0, 0, 1, 0, 1, 1, 0]] )
 
-test_net ( NNN, run_test_1, run_test_2 )
+
 Keras_run ( inputsA, outputsA, run_test_1, run_test_2 )
+test_net ( NNN, run_test_1, run_test_2 )
