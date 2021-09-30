@@ -1,4 +1,5 @@
 import copy
+from datetime import *
 import matplotlib.pyplot as plt
 from KKeras import *
 
@@ -30,7 +31,7 @@ def sigmoidA(x) :
 def sigmoidA_derivative(x) :
     return x * (1 - x)
 
-#Neraul net class
+#Neural net class
 #Uses replaceable activation functions
 class NeuralNetwork :
     def __init__(self) :
@@ -71,20 +72,19 @@ class NeuralNetwork :
         prediction = sigmoid_fn ( np.dot ( new_input, self.weights ) )
         return prediction
 
+def test_run_random(nnet, num, row, col):
+    inputs = np.random.randint ( 2, size=(row, col) )
+    print("\nTEST RESULTS")
+    for input in inputs:
+        e = input[2]
+        print ( 'Input: ', input, 'Expected:', e, ' , NN Result: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=input ) )
 
-def test_net(nnet, run_test_1, run_test_2) :
-    print("***** Testing Net *****")
-    print ( 'Input: ', run_test_1, 'NN Result: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_1 ) )
-    print ( 'Got: ', nnet.predict ( sigmoid_fn=sigmoidA, new_input=run_test_2 ), ' Expect: ', run_test_2[0][1] )
-
-# np.random.seed(datetime.now().microsecond)
-np.random.seed ( 5632 )
+np.random.seed(datetime.now().microsecond)
+#np.random.seed ( 5632 )
 row, col = 100, 8
 
 inputsA = np.random.randint ( 2, size=(row, col) )
-for n in inputsA :
-    n[2] = n[0]
-outputsA = np.array ( [inputsA[:, 0]] ).T
+outputsA = np.array ( [inputsA[:, 2]] ).T
 
 NNN = NeuralNetwork ()
 NNN.train ( inputsA, outputsA )
@@ -94,7 +94,8 @@ plot_weights ( NNN.epoch_list, NNN.weight_history )
 
 run_test_1 = np.array ( [[1, 1, 1, 0, 0, 1, 0, 1]] )
 run_test_2 = np.array ( [[0, 0, 0, 1, 0, 1, 1, 0]] )
-test_net ( NNN, run_test_1, run_test_2 )
+
+test_run_random(NNN, 10, 5, col)
 
 #Keras_run ( inputsA, outputsA, run_test_1, run_test_2 )
 #test_net ( NNN, run_test_1, run_test_2 )
