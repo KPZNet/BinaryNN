@@ -101,11 +101,16 @@ plot_error(NNN.epoch_list, NNN.error_history)
 plot_weights(NNN.epoch_list, NNN.weight_history)
 
 
-kmodel = keras_run(inputsA, outputsA)
+kmodelsigmoid = keras_run(inputsA, outputsA, inactivation='sigmoid')
+kmodelrel = keras_run(inputsA, outputsA, inactivation='relu')
 
 test_net(NNN)
 
 run_test_1 = np.array ( [[1, 1, 1, 0, 0, 1, 0, 1]] )
-run_test_2 = np.array ( [[0, 0, 0, 1, 0, 1, 1, 0]] )
-keras_model_predict(kmodel, run_test_1)
-keras_model_predict(kmodel, run_test_2)
+run_test_2 = np.array ( [[0, 1, 0, 1, 0, 1, 1, 0]] )
+print("SIGMOID")
+keras_model_predict(kmodelsigmoid, run_test_1)
+keras_model_predict(kmodelsigmoid, run_test_2)
+print("RELU")
+keras_model_predict(kmodelrel, run_test_1)
+keras_model_predict(kmodelrel, run_test_2)
