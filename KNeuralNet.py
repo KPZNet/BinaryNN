@@ -3,6 +3,9 @@ from datetime import *
 import matplotlib.pyplot as plt
 import numpy as np
 
+#making a minor changeon branched version
+
+
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
     plt.plot ( epocs, error_history, label="errors" )
