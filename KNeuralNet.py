@@ -3,10 +3,13 @@ from datetime import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+#oiaposdifuaopsidfuaopsdifu\]
 # CHANGE
 
 # akjf;alksdjf
+
+
+#kkhlkjhkjhjl
 
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
