@@ -10,6 +10,7 @@ import numpy as np
 
 
 #kkhlkjhkjhjl
+# some comments to make a push
 
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
