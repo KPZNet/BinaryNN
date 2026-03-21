@@ -3,6 +3,9 @@ from datetime import *
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+# This is a simple implementation of a binary neural network in Python.
+# The network is trained to learn a simple binary function based on the input data.
 # jalksdfj;alkdsfj;laksdjfa
 
 # make a change to push
