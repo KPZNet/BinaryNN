@@ -5,6 +5,8 @@ import numpy as np
 
 #making a minor changeon branched version
 
+# LOCLA
+
 
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
