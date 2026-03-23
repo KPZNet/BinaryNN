@@ -7,6 +7,8 @@ import numpy as np
 
 # LOCLA
 
+# asfasdfasdfasdfjasldkfjalsdjflkasdjfkl
+
 
 #Print error rate over epochs to see training trend
 def plot_error(epocs, error_history) :
