@@ -7,6 +7,9 @@ import numpy as np
 
 #lakdjflaskdfja;lskdfj
 
+# chanajsdflkjasdlfk;
+#lajdf;lkajdf;klajsdfklj
+
 
 #asdfja;ldsjfasdf
 
