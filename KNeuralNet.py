@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 #adfdfadfad
 #errrrrr
-
+#fjg;lajf;lkajdflk;asjfasdf
 #lakdjflaskdfja;lskdfj
 
 # chanajsdflkjasdlfk;
