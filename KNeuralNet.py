@@ -8,6 +8,8 @@ import numpy as np
 # LOCLA
 # making copies....
 
+#lkdj;adjf;lasdfjlkadf
+
 # akdfj;asdjfl;kasjdflkjsadf
 
 # djfaskdjfhkasjdhfklajsdhf
